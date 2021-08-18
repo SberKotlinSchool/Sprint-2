@@ -5,7 +5,7 @@ import java.io.PrintStream
 import kotlin.test.assertEquals
 
 open class BaseTest(val workDir: String) {
-    private lateinit var outputStream: ByteArrayOutputStream
+    protected lateinit var outputStream: ByteArrayOutputStream
     private lateinit var inputStream: InputStream
 
     @BeforeEach
@@ -17,7 +17,7 @@ open class BaseTest(val workDir: String) {
         System.setIn(inputStream)
     }
 
-    fun checkOutput() {
+    open fun checkOutput() {
         val resultString = outputStream.toString("UTF-8")
         val expectedOutPut = this::class.java.getResource("$workDir/output.txt")!!.readText()
         assertEquals(expectedOutPut, resultString.trim(), "Not equals")
