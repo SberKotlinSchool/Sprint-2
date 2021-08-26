@@ -1,9 +1,10 @@
+
+
 class ProblemA {
-
     fun main() {
+        problemA()
 
-        //ваша реализация в методе main
-
+        }
     }
 
-}
+
