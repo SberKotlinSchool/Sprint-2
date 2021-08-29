@@ -20,6 +20,6 @@ open class BaseTest(val workDir: String) {
     fun checkOutput() {
         val resultString = outputStream.toString("UTF-8")
         val expectedOutPut = this::class.java.getResource("$workDir/output.txt")!!.readText()
-        assertEquals(expectedOutPut, resultString.trim(), "Not equals")
+        assertEquals(expectedOutPut.trim(), resultString.trim(), "Not equals")
     }
 }
