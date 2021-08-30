@@ -5,13 +5,14 @@ class ProblemA {
         problemA()
 
         }
+
     fun problemA() {
 //  Введите количество циклов
-        val numberOfRequests = readLine()!!.toInt()
+        val numberOfRequests = readInt()
 
         for (i in 1..numberOfRequests) {
 //  Введите три числа через пробел
-            val threeValue = readLine()!!.trim().split(" ").run { IntArray(3) { get(it).toInt() } }
+            val threeValue = readIntArray(3)
 
             var theFrogsPosition: Long = 0
 

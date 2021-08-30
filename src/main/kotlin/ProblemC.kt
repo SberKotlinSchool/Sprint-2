@@ -6,9 +6,9 @@ class ProblemC {
     }
     fun problemC() {
 //    Введите количество студентов
-        val students = readLine()!!.toInt()
+        val students = readInt()
 //    Введите для каждого студента значение умения программировать через пробел
-        val programmingSkills = readLine()!!.trim().split(" ").run { IntArray(students) { get(it).toInt() } }
+        val programmingSkills = readIntArray(students)
         programmingSkills.sort()
         var miniNumberOfTasks = 0
 //    Вычисляем минимальное количество задач для формирования команд

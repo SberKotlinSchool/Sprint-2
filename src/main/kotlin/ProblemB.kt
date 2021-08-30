@@ -6,10 +6,10 @@ class ProblemB {
     }
     fun problemB() {
 //    Введите количество циклов
-        val numberOfRequests = readLine()!!.toInt()
+        val numberOfRequests = readInt()
         repeat(numberOfRequests){
 //    Введите два числа длину строки и количество символов через пробел
-            val twoValue = readLine()!!.trim().split(" ").run { IntArray(2) { get(it).toInt() } }
+            val twoValue = readIntArray(2)
             for (i in 0..twoValue[0]) {
                 val charCode= 97 + (i % twoValue[1])
                 val char = Char(charCode)

@@ -8,14 +8,14 @@ class ProblemD {
     }
     fun problemD() {
 //    Введите количество циклов
-        val numberOfRequests = readLine()!!.toInt()
+        val numberOfRequests = readInt()
 
         repeat(numberOfRequests) {
             var marginMax: Long = 0
 //    Введите количество клиентов
-            val numberOfClients = readLine()!!.toInt()
+            val numberOfClients = readInt()
 //    Введите количество монет для каждого клиента через пробел
-            val listNumberOfCoins = readLine()!!.trim().split(" ").run { LongArray(numberOfClients) { get(it).toLong() } }
+            val listNumberOfCoins = readLongArray(numberOfClients)
             listNumberOfCoins.sortDescending()
 //    Вычисляем максимальную прибыль кафе
             for ((index, value) in listNumberOfCoins.withIndex()) {
