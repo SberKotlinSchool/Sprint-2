@@ -1,3 +1,4 @@
-cbcacab
+abcabca
 abcd
-baabab
+ababab
+abcdefghijklmnopqrstuvwxyzabcdefgh
