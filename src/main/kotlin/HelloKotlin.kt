@@ -1,5 +1,4 @@
-
 //Вывести Hello, Kotlin!
 fun printHello() {
-    println("Hello, ...!")
+    println("Hello, Kotlin!")
 }
