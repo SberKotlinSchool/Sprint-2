@@ -5,7 +5,8 @@ class ProblemC {
         //println("Введите количество студентов")
         val studentCount: Int = readInt()
         //println("Введите навыки програмирования студентов")
-        val studentProgramingAbility = readListInt().sorted()
+        val studentProgramingAbility = readIntArray(studentCount)
+        studentProgramingAbility.sort()
         var taskCount: Long = 0
 
         for (index in studentProgramingAbility.indices step 2) {
