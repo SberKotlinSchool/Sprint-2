@@ -1,6 +1,6 @@
 class ProblemB {
 
-    fun main() =
+    fun main() {
         this::class.java.getResource("problemB/input.txt")!!.readText()
             .split("\r\n")
             .filterIndexed { index, s -> index != 0 }
@@ -10,7 +10,8 @@ class ProblemB {
                     .toIntArray()
             }
             .map { generateOne(*it) }
-            .reduce { acc, s -> acc + "\n" + s }
+            .forEach { println(it) }
+    }
 
     fun generateOne(vararg v: Int) =
         ALPHABET.subSequence(0, v[1]).repeat(v[0] / v[1]) + ALPHABET.subSequence(0, v[0] - (v[0] / v[1]) * v[1])

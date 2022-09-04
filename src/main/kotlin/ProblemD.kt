@@ -10,6 +10,5 @@ class ProblemD {
                     .mapIndexed { idx, itt -> itt * (idx + 1) }
                     .maxOrNull()
             }
-            .map { it.toString() }
-            .reduce { acc, s -> acc + "\n" + s }
+            .forEach { println(it) }
 }
