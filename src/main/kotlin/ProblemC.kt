@@ -1,6 +1,6 @@
 class ProblemC {
 
-    fun main() {
+    fun main() =
         this::class.java.getResource("problemC/input.txt")!!.readText()
             .split("\r\n")[1]
             .split(" ")
@@ -8,7 +8,5 @@ class ProblemC {
             .sorted()
             .mapIndexed { idx, value -> value * if (idx % 2 == 0) -1 else 1 }
             .sum()
-            .let { print(it) }
-    }
 
 }

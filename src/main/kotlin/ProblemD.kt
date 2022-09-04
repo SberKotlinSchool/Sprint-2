@@ -1,5 +1,5 @@
 class ProblemD {
-    fun main() {
+    fun main() =
         this::class.java.getResource("problemD/input.txt")!!.readText()
             .split("\r\n")
             .filterIndexed { index, s -> index != 0 && index % 2 == 0 }
@@ -7,9 +7,9 @@ class ProblemD {
                 it.split(" ")
                     .map { it.toLong() }
                     .sortedDescending()
-                    .mapIndexed { idx, it -> it * (idx + 1) }
+                    .mapIndexed { idx, itt -> itt * (idx + 1) }
                     .maxOrNull()
             }
-            .forEach(::println)
-    }
+            .map { it.toString() }
+            .reduce { acc, s -> acc + "\n" + s }
 }
