@@ -1,6 +1,6 @@
 class ProblemD {
     fun main() {
-        this::class.java.getResource("problemD\\input.txt")!!.readText()
+        this::class.java.getResource("problemD/input.txt")!!.readText()
             .split("\r\n")
             .filterIndexed { index, s -> index != 0 && index % 2 == 0 }
             .map {
