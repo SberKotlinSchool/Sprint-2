@@ -1,7 +1,6 @@
 class ProblemD {
     fun main() =
-        this::class.java.getResource("problemD/input.txt")!!.readText()
-            .split("\n")
+        lines(FOLDERNAME)
             .filterIndexed { index, s -> index != 0 && index % 2 == 0 }
             .map {
                 it.split(" ")
@@ -11,4 +10,8 @@ class ProblemD {
                     .maxOrNull()
             }
             .forEach { println(it) }
+
+    companion object {
+        val FOLDERNAME = "problemD"
+    }
 }

@@ -1,8 +1,7 @@
 class ProblemA {
 
-    fun main() {
-        this::class.java.getResource("problemA/input.txt")!!.readText()
-            .split("\n")
+    fun main() =
+        lines(FOLDERNAME)
             .filterIndexed { index, s -> index != 0 }
             .map {
                 it.split(" ")
@@ -11,7 +10,10 @@ class ProblemA {
             }
             .map { `define frog position`(*it) }
             .forEach { println(it) }
-    }
 
     fun `define frog position`(vararg v: Long) = (v[0] - v[1]) * (v[2] / 2) + v[2] % 2 * v[0]
+
+    companion object {
+        val FOLDERNAME = "problemA"
+    }
 }
