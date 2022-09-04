@@ -2,7 +2,7 @@ class ProblemB {
 
     fun main() {
         this::class.java.getResource("problemB/input.txt")!!.readText()
-            .split("\r\n")
+            .split("\n")
             .filterIndexed { index, s -> index != 0 }
             .map {
                 it.split(" ")
