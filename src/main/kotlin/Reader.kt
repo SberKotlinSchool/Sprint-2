@@ -10,3 +10,9 @@ fun readLongArray(size:Int) = readStrings().run { LongArray(size) { get(it).toLo
 
 fun readListInt() = readStrings().map { it.toInt() }
 fun readListLong() = readStrings().map { it.toLong() }
+
+fun readLongSortArray(size:Int): LongArray {
+    val readLongArray = readLongArray(size)
+    readLongArray.sort()
+    return readLongArray
+}
