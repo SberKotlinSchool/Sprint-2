@@ -1,5 +1,6 @@
 
 //Вывести Hello, Kotlin!
 fun printHello() {
-    println("Hello, ...!")
+    val kotlin = "Kotlin"
+    println("Hello, $kotlin!")
 }
