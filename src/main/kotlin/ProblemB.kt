@@ -2,8 +2,19 @@ class ProblemB {
 
     fun main() {
 
-        //ваша реализация в методе main
-        //output на тестовый input может быть различным!
+        val rqNum = readInt()
+
+        for (i in 1..rqNum) {
+            val data = readIntArray(2)
+            val len = data[0]
+            val lettersNum = data[1]
+            val outputStream = StringBuffer(26)
+
+            for (j in 0 until len) {
+                outputStream.append('a' + j % lettersNum)
+            }
+            println(outputStream)
+        }
 
     }
 
