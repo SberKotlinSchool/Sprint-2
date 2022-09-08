@@ -10,9 +10,7 @@ class ProblemA {
 
     @Throws(IllegalArgumentException::class)
     fun loadInitialData(input: List<Long>): InitialData {
-        if (input.size != 3 || input.any { it < 0 }) {
-            throw IllegalArgumentException("Initial data error!")
-        }
+        if (input.size != 3 || input.any { it < 0 }) throw IllegalArgumentException("Initial data error!")
         return InitialData(input.component1(), -input.component2(), input.component3())
     }
 

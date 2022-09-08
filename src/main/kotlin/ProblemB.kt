@@ -1,3 +1,5 @@
+import kotlin.jvm.Throws
+
 class ProblemB {
 
     fun main() {
@@ -12,12 +14,12 @@ class ProblemB {
         }
     }
 
+    @Throws(IllegalArgumentException::class)
     fun loadInitialData(input: List<Int>): InitialData {
         val length:Int = input.component1()
         val maxLetterIndex:Int = input.component2()
-        if (input.size != 2 || input.any { it <= 0 } || length < maxLetterIndex || maxLetterIndex > 26) {
+        if (input.size != 2 || input.any { it <= 0 } || length < maxLetterIndex || maxLetterIndex > 26)
             throw IllegalArgumentException("Initial data error!")
-        }
         return InitialData(length, maxLetterIndex)
     }
 
