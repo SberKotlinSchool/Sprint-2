@@ -18,7 +18,7 @@ class ProblemC {
         val studentsCount: Int = readInt()
         val studentSmartSkills: List<Int> = readListInt()
         if (
-            studentsCount < 0
+            studentsCount <= 0
             || studentSmartSkills.any { it < 0 }
             || studentsCount % 2 != 0
             || studentSmartSkills.size != studentsCount
