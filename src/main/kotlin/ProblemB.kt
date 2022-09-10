@@ -2,8 +2,15 @@ class ProblemB {
 
     fun main() {
 
-        //ваша реализация в методе main
-        //output на тестовый input может быть различным!
+        val t = readInt()
+        for(i in 1..t){
+            val nk = readIntArray(2)
+            for(j in 0..nk[0]-1){
+                print('a' + j%nk[1])
+            }
+            println()
+
+        }
 
     }
 
