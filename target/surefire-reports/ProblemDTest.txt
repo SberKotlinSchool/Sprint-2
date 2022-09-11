@@ -1,0 +1,14 @@
+-------------------------------------------------------------------------------
+Test set: ProblemDTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.01 s <<< FAILURE! - in ProblemDTest
+testSolution  Time elapsed: 0.001 s  <<< FAILURE!
+java.lang.AssertionError: 
+Not equals. Expected <3
+4
+6
+20
+1000000000000
+1999999999998>, actual <>.
+	at ProblemDTest.testSolution(ProblemDTest.kt:8)
+

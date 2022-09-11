@@ -1,10 +1,15 @@
 class ProblemB {
-
     fun main() {
-
-        //ваша реализация в методе main
-        //output на тестовый input может быть различным!
-
+        var t = readInt()
+    while(t > 0) {
+        var n = readInt()
+        var k = readInt()
+        var resultString = ""
+        for (pos in 0 until n) {
+            resultString += Char(97 + (pos % k))
+        }
+        t = t - 1
+        println(resultString)
     }
-
+    }
 }
