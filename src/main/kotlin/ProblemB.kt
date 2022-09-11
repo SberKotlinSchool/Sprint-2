@@ -12,7 +12,7 @@ class ProblemB {
                 res += it.toString().repeat(numOfEach)
                 res += if (n % k > it.minus('a')) it.toString() else ""
             }
-            print(res)
+            println(res)
 
         }
 
