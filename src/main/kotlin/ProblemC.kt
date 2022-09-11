@@ -2,10 +2,11 @@ class ProblemC {
 
     fun main() {
         val n = readInt()
-        readIntArray(n).sorted().let { skills ->
+        with(readIntArray(n)) {
+            sort()
             var countTasks = 0
-            for (i in skills.indices step 2) {
-                countTasks += skills[i + 1] - skills[i]
+            for (i in indices step 2) {
+                countTasks += get(i + 1) - get(i)
             }
             println(countTasks)
         }

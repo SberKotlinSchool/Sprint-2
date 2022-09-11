@@ -4,11 +4,14 @@ class ProblemD {
         val t = readInt()
         for (i in 1..t) {
             val n = readInt()
-            readLongArray(n).let { moneyArr ->
-                val result = moneyArr.maxOf { money ->
-                    moneyArr.sumOf { money * if (it < money) 0 else 1 }
+            with(readLongArray(n)) {
+                sort()
+                var maxProfit = n * first()
+                for (j in 1 until size) {
+                    val profit = get(j) * (n - j)
+                    maxProfit = maxOf(maxProfit, profit)
                 }
-                println(result)
+                println(maxProfit)
             }
         }
     }
