@@ -3,9 +3,10 @@ class ProblemA {
         //ваша реализация в методе main
         var t = readInt()
         while (t > 0) {
-            val a = readInt()
-            val b = readInt()
-            var k = readInt()
+            val stringL = readLongArray(3)
+            val a = stringL[0]
+            val b = stringL[1]
+            var k = stringL[2]
             var x : Long = 0
             while (k > 0) {
                 if (k%2 != 0){
