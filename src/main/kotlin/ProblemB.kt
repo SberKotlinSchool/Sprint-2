@@ -1,10 +1,16 @@
 class ProblemB {
 
     fun main() {
-
-        //ваша реализация в методе main
-        //output на тестовый input может быть различным!
-
+        val aCode = 'a'.code
+        val t = readInt()
+        for (j in 1..t) {
+            val (n, k) = readListInt()
+            StringBuilder().run {
+                for (i in 0 until n) {
+                    append((aCode + i % k).toChar())
+                }
+                println(this)
+            }
+        }
     }
-
 }
