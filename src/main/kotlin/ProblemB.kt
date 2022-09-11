@@ -6,12 +6,10 @@ class ProblemB {
             val nk  = readIntArray(2)
             val n  = nk[0]
             val k  = nk[1]
-            val numOfEach = n / k
-            var res = ""
-            ('a'..('a'.plus(k - 1))).forEach{
-                res += it.toString().repeat(numOfEach)
-                res += if (n % k > it.minus('a')) it.toString() else ""
-            }
+            val pattern  = ('a'.until('a'.plus(k)))
+                .joinToString(separator = "").trim()
+            val res = pattern.repeat(n  / k) +
+                    pattern.substring(0 until n % k)
             println(res)
 
         }
