@@ -2,8 +2,18 @@ class ProblemB {
 
     fun main() {
 
-        //ваша реализация в методе main
-        //output на тестовый input может быть различным!
+        val requestCount = readInt()
+
+        for (i in 1..requestCount) {
+
+            val currentRequest = readIntArray(2)
+            val output = StringBuffer(currentRequest[0])
+
+            for (j in 0 until currentRequest[0]) {
+                output.append('a' + j % currentRequest[1])
+            }
+            println(output)
+        }
 
     }
 
