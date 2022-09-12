@@ -6,9 +6,9 @@ class ProblemB {
         var n = stringL[0]
         var k = stringL[1]
         var k1 = k.toLong()
-        var pos1 = pos.toLong()
         var resultString = ""
         for (pos in 0 until n) {
+              var pos1 = pos.toLong()
             resultString += Char(97 + (pos1 % k1))
         }
         t = t - 1
