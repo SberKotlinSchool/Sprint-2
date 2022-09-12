@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: ProblemATest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.018 s <<< FAILURE! - in ProblemATest
+testSolution  Time elapsed: 0.002 s  <<< ERROR!
+java.lang.NumberFormatException: For input string: "5 2 3"
+	at ProblemATest.testSolution(ProblemATest.kt:7)
+
