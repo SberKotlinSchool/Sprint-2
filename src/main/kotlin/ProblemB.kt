@@ -7,7 +7,7 @@ class ProblemB {
         var k = stringL[1]
         var resultString = ""
         for (pos : Int in 0 until n) {
-            resultString += Char(code: 97 + (pos % k))
+            resultString += Char(97 + (pos % k))
         }
         t = t - 1
         println(resultString)
