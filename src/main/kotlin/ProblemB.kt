@@ -12,29 +12,10 @@ class ProblemB {
     }
 
     private fun problemB(length: Int, count: Int): String {
-        val alphabetStr = "abcdefghijklmnopqrstuvwxyz"
-        val alphabet = alphabetStr.toCharArray()
-        val maxMinFreq = length / count
         var result = ""
-
-        val end: Int
-        if (length > alphabet.size) {
-            end = length % alphabet.size
-            val fullAlphabetCount = (length - end) / alphabet.size
-            result = alphabetStr.repeat(fullAlphabetCount)
-        } else {
-            end = count
+        for (index in 0 until length) {
+            result += Char(97 + (index % count))
         }
-
-        for (index in 1..end) {
-            result += alphabet[index - 1]
-                .toString()
-                .repeat(maxMinFreq)
-            if (index == end && count % 2 != 0) {
-                result += alphabet[index - 1].toString()
-            }
-        }
-
         return result
     }
 
