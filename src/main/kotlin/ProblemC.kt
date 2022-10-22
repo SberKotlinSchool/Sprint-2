@@ -1,14 +1,14 @@
-
 class ProblemC {
 
     fun main() {
+        val studentsCount = readInt()
+        val skillLevels = readListInt().sorted()
 
-        //ваша реализация в методе main
-        var totalTaskNum = 0
-        readInt()
-        val allStudents = readListInt().sorted()
-        for (s in 1..allStudents.size step 2)
-            totalTaskNum += allStudents[s] - allStudents[s - 1]
-        println(totalTaskNum)
+        var minTasksCount = 0
+        for (i in 1..studentsCount step 2) {
+            minTasksCount += skillLevels[i] - skillLevels[i - 1]
+        }
+
+        println(minTasksCount)
     }
 }

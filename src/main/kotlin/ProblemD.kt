@@ -1,35 +1,33 @@
 class ProblemD {
 
     fun main() {
-
-        //ваша реализация в методе main
-        val count = readInt()
-        for (r in 1..count) {
-            val clients = readLong()
-            val moneys = readListLong().distinct().sorted().reversed().toLongArray()
-            val profit = getOptProfit(moneys, clients)
-            println(profit)
+        val requestCount = readInt()
+        for (r in 1..requestCount) {
+            val totalClients = readLong()
+            val money = readListLong().distinct().sorted().reversed().toLongArray()
+            println(getProfitSum(money, totalClients))
         }
     }
 
-    private fun getOptProfit(moneys: LongArray, clients: Long): Long {
-        var res = 0L
-        var cnt = 1
-        if (moneys.size == 1) {
-            return clients * moneys[0]
+    private fun getProfitSum(money: LongArray, totalClients: Long): Long {
+        if (money.size == 1) {
+            return totalClients * money[0]
         }
-        for (m in moneys) {
-            val nextRes = m * cnt
-            val prevSum = res * (cnt - 1)
-            if (nextRes >= prevSum) {
-                res = m
-                cnt++
+
+        var profitPrice = 0L
+        var profitClientCount = 1
+        for (minPrice in money) {
+            val nextSum = minPrice * profitClientCount
+            val prevSum = profitPrice * (profitClientCount - 1)
+            if (nextSum >= prevSum) {
+                profitPrice = minPrice
+                profitClientCount++
             }
-            if (nextRes < prevSum) {
-                cnt--
+            if (nextSum < prevSum) {
+                profitClientCount--
                 break
             }
         }
-        return res * cnt
+        return profitPrice * profitClientCount
     }
 }
