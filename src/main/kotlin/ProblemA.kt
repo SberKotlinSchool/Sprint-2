@@ -1,25 +1,30 @@
 class ProblemA {
 
     fun main() {
-        val count = readLong()
-        for (s in 1..count) {
+        val requestCount = readLong()
+        for (s in 1..requestCount) {
             val args = readListLong().toLongArray()
             if (args.size == 3) {
-                println("${startJumping(*args)}")
+                println(startJumping(*args))
             }
         }
     }
 
     private fun startJumping(vararg params: Long): Long {
+        val (right, left, jumpCount) = params
         var jump = 0L
-        var res = 0L
-        if (params[0] == params[1]) {
-            return if (params[2] % 2L == 0L) 0 else params[0]
+        var frogPos = 0L
+        if (left == right) {
+            return if (jumpCount % 2L == 0L) 0 else right
         }
-        while (jump < params[2]) {
-            if (jump % 2L == 0L) res += params[0] else res -= params[1]
+        while (jump < jumpCount) {
+            if (jump % 2L == 0L) {
+                frogPos += right
+            } else {
+                frogPos -= left
+            }
             jump++
         }
-        return res
+        return frogPos
     }
 }
