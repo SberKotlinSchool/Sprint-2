@@ -12,17 +12,15 @@ class ProblemB {
 
     private fun getString(vararg params: Int): String {
         val (strLen, maxCharLen) = params
-        var step = 0
         var charPos = 0
         var str = ""
-        while (step < strLen) {
+        repeat(strLen) {
             str += (65 + charPos).toChar()
             if (charPos == maxCharLen - 1) {
                 charPos = 0
             } else {
                 charPos++
             }
-            step++
         }
         return str.lowercase()
     }
