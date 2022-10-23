@@ -1,10 +1,19 @@
 class ProblemB {
 
     fun main() {
-
-        //ваша реализация в методе main
-        //output на тестовый input может быть различным!
-
+        val commandSteps = readInt();
+        for(i in 1..commandSteps)
+        {
+            val inputData = readListInt();
+            val length = inputData[0]-1;
+            val charNumber = inputData[1];
+            var result = ""
+            for(l in 0..length)
+            {
+                result += 'a' + l % charNumber;
+            }
+            println(result);
+        }
     }
 
 }
