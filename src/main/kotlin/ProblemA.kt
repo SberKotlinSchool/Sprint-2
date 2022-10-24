@@ -1,4 +1,3 @@
-import java.io.File
 class ProblemA {
 
     fun sum_to(a: Int, b: Int, k: Int): Long {
