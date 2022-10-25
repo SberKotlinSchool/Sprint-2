@@ -24,5 +24,4 @@ class ProblemD {
         }
         return maxProfit
     }
-
 }

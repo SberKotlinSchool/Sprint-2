@@ -16,5 +16,4 @@ class ProblemA {
         val remainder: Long = k % 2;
         return (a - b) * pairCount + a * remainder;
     }
-
 }

@@ -11,32 +11,6 @@ class ProblemB {
         }
     }
 
-    fun getUniformStr(n: Int, k: Int): String {
-        val alphabet = "abcdefghijklmnopqrstuvwxyz".toCharArray()
-        val chars = alphabet.copyOf(k)
-        var str = "";
-        var i = 1;
-        while (i < n){
-            str += chars.random().toString()
-            i+=k
-        }
-        return str.substring(0, n);
-    }
-
-//    fun getUniformStr2(n: Int, k: Int): String {
-//        val alphabet = "abcdefghijklmnopqrstuvwxyz".toCharArray()
-//        val chars = alphabet.copyOf(k)
-//        var str = "";
-//        var i = 1;
-//        while (i < n){
-//            str += chars
-//            i+=k
-//        }
-//        return (1..n)
-//            .map { str.substring(0, n).random() }
-//            .joinToString("");
-//    }
-
     fun getUniformStr2(n: Int, k: Int): String {
         val alphabet = "abcdefghijklmnopqrstuvwxyz"
         val chars = alphabet.substring(0, k)
