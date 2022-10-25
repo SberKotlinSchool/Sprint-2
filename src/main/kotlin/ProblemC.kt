@@ -34,4 +34,5 @@ class ProblemC {
         }
         return minDiff + calculateTaskRecur(notUsesStudents)
     }
+
 }

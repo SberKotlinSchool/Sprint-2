@@ -22,4 +22,5 @@ class ProblemB {
         }
         return str.substring(0, n);
     }
+
 }
