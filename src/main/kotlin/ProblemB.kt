@@ -1,14 +1,13 @@
 class ProblemB {
 
     fun main() {
-        val alphabet = ('a'..'z').toMutableList()
+        val alphabet = ('a'..'z').toList()
 
         val t = readInt()
         repeat(t) {
             val array = readIntArray(2)
             val n = array[0]
             val k = array[1]
-
 
             val builder = StringBuilder()
             while (builder.count() < n) {
@@ -17,10 +16,8 @@ class ProblemB {
                         builder.append(alphabet[i])
                     }
                 }
-
             }
             println(builder.toString())
-
         }
     }
 }

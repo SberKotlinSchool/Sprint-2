@@ -18,7 +18,6 @@ class ProblemA {
                 x += a
 
             println(x)
-
         }
     }
 }
