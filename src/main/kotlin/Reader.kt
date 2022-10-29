@@ -1,4 +1,3 @@
-
 fun readln() = readLine()!!
 
 fun readInt() = readln().toInt()
@@ -10,3 +9,10 @@ fun readLongArray(size:Int) = readStrings().run { LongArray(size) { get(it).toLo
 
 fun readListInt() = readStrings().map { it.toInt() }
 fun readListLong() = readStrings().map { it.toLong() }
+
+
+
+fun readArrayOfIntLists(lists: Int) = Array(lists) { readListInt() }
+fun readArrayOfLongArraysOfVarLength(arrays: Int) = Array(arrays) { readLongArray(readInt()) }
+fun readArrayOfIntLists() = readArrayOfIntLists(readInt())
+
