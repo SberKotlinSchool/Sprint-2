@@ -17,9 +17,19 @@ open class BaseTest(val workDir: String) {
         System.setIn(inputStream)
     }
 
-    fun checkOutput() {
-        val resultString = outputStream.toString("UTF-8")
-        val expectedOutPut = this::class.java.getResource("$workDir/output.txt")!!.readText()
+    fun checkOutput(transformer: (String) -> String = { it }) {
+        val resultString = outputStream.toString("UTF-8").transformEachLine(transformer)
+        val expectedOutPut = this::class.java.getResource("$workDir/output.txt")!!.readText().transformEachLine(transformer)
         assertEquals(expectedOutPut, resultString.trim(), "Not equals")
     }
+
+    fun String.transformEachLine(transformer: (String) -> String) =
+        this.lines().joinToString(separator = "\n", transform = transformer)
+
+    fun sortByChars(str: String) = str.toCharArray().let {
+        it.sort()
+        String(it)
+    }
+
+
 }

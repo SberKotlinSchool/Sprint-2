@@ -5,6 +5,6 @@ class ProblemBTest : BaseTest(workDir = "problemB") {
     @Test
     fun testSolution() {
         ProblemB().main()
-        checkOutput()
+        checkOutput(::sortByChars)
     }
 }
