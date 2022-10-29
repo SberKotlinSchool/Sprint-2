@@ -23,7 +23,8 @@ open class BaseTest(val workDir: String) {
         assertEquals(expectedOutPut, resultString.trim(), "Not equals")
     }
 
-    fun String.transformEachLine(transformer: (String) -> String) = this.lines().map(transformer).joinToString(separator = "\n")
+    fun String.transformEachLine(transformer: (String) -> String) =
+        this.lines().joinToString(separator = "\n", transform = transformer)
 
     fun sortByChars(str: String) = str.toCharArray().let {
         it.sort()
