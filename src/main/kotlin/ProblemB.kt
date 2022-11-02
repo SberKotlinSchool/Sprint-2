@@ -2,9 +2,14 @@ class ProblemB {
 
     fun main() {
 
-        //ваша реализация в методе main
-        //output на тестовый input может быть различным!
-
+        Array(readInt()) { readIntArray(2) }.forEach {
+            var j = 0;
+            for (i in 1 .. it[0]) {
+                print(Char('a'.toInt() + j++))
+                if (j >= it[1]) j = 0;
+            }
+            println()
+        }
     }
 
 }
