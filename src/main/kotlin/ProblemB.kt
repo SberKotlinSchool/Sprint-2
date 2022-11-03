@@ -11,17 +11,13 @@ class ProblemB {
     }
 
     private fun getString(vararg params: Int): String {
-        val (strLen, maxCharLen) = params
-        var charPos = 0
+        var (strLen, maxCharLen) = params
         var str = ""
-        repeat(strLen) {
-            str += (65 + charPos).toChar()
-            if (charPos == maxCharLen - 1) {
-                charPos = 0
-            } else {
-                charPos++
-            }
+        while (strLen > 0) {
+            if (strLen < maxCharLen) maxCharLen = strLen
+            str += ('a' until 'a' + maxCharLen).joinToString("")
+            strLen -= maxCharLen
         }
-        return str.lowercase()
+        return str
     }
 }
