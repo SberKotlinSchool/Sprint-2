@@ -3,31 +3,21 @@ class ProblemD {
     fun main() {
         val requestCount = readInt()
         for (r in 1..requestCount) {
-            val totalClients = readLong()
-            val money = readListLong().distinct().sorted().reversed().toLongArray()
-            println(getProfitSum(money, totalClients))
+            readInt() // skip
+            val money = readListLong()
+            println(getProfitSum(money.sorted().toLongArray()))
         }
     }
 
-    private fun getProfitSum(money: LongArray, totalClients: Long): Long {
-        if (money.size == 1) {
-            return totalClients * money[0]
-        }
-
-        var profitPrice = 0L
-        var profitClientCount = 1
-        for (minPrice in money) {
-            val nextSum = minPrice * profitClientCount
-            val prevSum = profitPrice * (profitClientCount - 1)
-            if (nextSum >= prevSum) {
-                profitPrice = minPrice
-                profitClientCount++
-            }
-            if (nextSum < prevSum) {
-                profitClientCount--
+    private fun getProfitSum(money: LongArray): Long {
+        var maxProfitPrice = 0L
+        for (i in money.lastIndex downTo 0) {
+            val priceSum = money[i] * (money.size - i)
+            if (priceSum < maxProfitPrice) {
                 break
             }
+            maxProfitPrice = priceSum
         }
-        return profitPrice * profitClientCount
+        return maxProfitPrice
     }
 }
