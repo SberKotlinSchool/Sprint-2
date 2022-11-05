@@ -4,20 +4,19 @@ class ProblemD {
         val requestCount = readInt()
         for (r in 1..requestCount) {
             readInt() // skip
-            val money = readListLong()
-            println(getProfitSum(money.sorted().toLongArray()))
+            println(getMaxProfitSum(readListLong().sorted()))
         }
     }
 
-    private fun getProfitSum(money: LongArray): Long {
-        var maxProfitPrice = 0L
-        for (i in money.lastIndex downTo 0) {
-            val priceSum = money[i] * (money.size - i)
-            if (priceSum < maxProfitPrice) {
+    private fun getMaxProfitSum(clientPrices: List<Long>): Long {
+        var maxProfitSum = 0L
+        for (i in clientPrices.lastIndex downTo 0) {
+            val profitSum = clientPrices[i] * (clientPrices.size - i)
+            if (profitSum < maxProfitSum) {
                 break
             }
-            maxProfitPrice = priceSum
+            maxProfitSum = profitSum
         }
-        return maxProfitPrice
+        return maxProfitSum
     }
 }
