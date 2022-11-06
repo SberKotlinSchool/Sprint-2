@@ -1,22 +1,18 @@
 class ProblemB {
 
     fun main() {
-        val requestCount = readInt()
-        for (r in 1..requestCount) {
-            val args = readListInt().toIntArray()
-            if (args.size == 2) {
-                println(getString(*args))
-            }
+        repeat(readInt()) {
+            println(getString(readListInt()))
         }
     }
 
-    private fun getString(vararg params: Int): String {
-        var (strLen, maxCharLen) = params
+    private fun getString(params: List<Int>): String {
+        var (strLen, maxLen) = params
         var str = ""
         while (strLen > 0) {
-            if (strLen < maxCharLen) maxCharLen = strLen
-            str += ('a' until 'a' + maxCharLen).joinToString("")
-            strLen -= maxCharLen
+            if (strLen < maxLen) maxLen = strLen
+            str += ('a' until 'a' + maxLen).joinToString("")
+            strLen -= maxLen
         }
         return str
     }
