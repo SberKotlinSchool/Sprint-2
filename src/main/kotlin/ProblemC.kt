@@ -1,9 +1,8 @@
 class ProblemC {
 
     fun main() {
-
-        //ваша реализация в методе main
-
+        val students = readInt()
+        val skills = readListInt().sorted()
+        println((1..students step 2).sumOf { skills[it] - skills[it - 1] })
     }
-
 }
