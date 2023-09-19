@@ -1,10 +1,10 @@
 class ProblemB {
 
     fun main() {
-
-        //ваша реализация в методе main
-        //output на тестовый input может быть различным!
-
+        val t = readInt()
+        for (i in 1..t) {
+            val (n, k) = readIntArray(2)
+            println(CharArray(n) {'a' + (it % k)})
+        }
     }
-
 }
