@@ -1,8 +1,6 @@
 class ProblemA {
 
     fun main() {
-        val inputStream = this::class.java.getResource("problemA/input.txt")!!.openStream()
-        System.setIn(inputStream)
         var steps = readInt()
         while (steps-- > 0) {
             val line = readListLong().toMutableList()
