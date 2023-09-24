@@ -1,7 +1,6 @@
 class ProblemA {
     fun main() {
         val requests = readInt()
-        val resArray = LongArray(requests)
 
         for (i in 0 until requests) {
             val row = readLongArray(3)
@@ -16,9 +15,7 @@ class ProblemA {
                 }
             }
 
-            resArray[i] = current
+            println(current)
         }
-
-        resArray.forEach { x -> println(x) }
     }
 }
