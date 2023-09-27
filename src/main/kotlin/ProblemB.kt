@@ -1,10 +1,18 @@
 class ProblemB {
-
     fun main() {
-
-        //ваша реализация в методе main
-        //output на тестовый input может быть различным!
-
+        var steps = readInt()
+        while (steps-- > 0) {
+            val line = readListInt().toMutableList()
+            var string = ""
+            var shift = 0
+            while (line[0]-- > 0) {
+                if (shift >= line[1]) {
+                    shift = 0
+                }
+                val letter = 'a' + shift++
+                string += letter
+            }
+            println(string)
+        }
     }
-
 }
