@@ -1,5 +1,3 @@
-import kotlin.random.Random
-
 class ProblemB {
     fun main() {
         var steps = readInt()
