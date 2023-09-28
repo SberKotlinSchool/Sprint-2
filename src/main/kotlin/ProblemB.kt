@@ -1,10 +1,16 @@
 class ProblemB {
-
     fun main() {
+        val requests = readInt()
+        val alphabet = "abcdefghijklmnopqrstuvwxyz"
 
-        //ваша реализация в методе main
-        //output на тестовый input может быть различным!
+        for (i in 0 until requests) {
+            val intArr = readIntArray(2)
+            val resString = StringBuilder()
 
+            while (resString.length < intArr[0]) {
+                resString.append(alphabet.substring(0, intArr[1]))
+            }
+            println(resString.substring(0, intArr[0]))
+        }
     }
-
 }
