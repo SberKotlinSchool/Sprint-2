@@ -1,10 +1,12 @@
 class ProblemB {
 
     fun main() {
-
-        //ваша реализация в методе main
-        //output на тестовый input может быть различным!
-
+        val queryCount = readInt()
+        for (i in 1..queryCount) {
+            val (lengthLine, charCount) = readIntArray(2)
+            val result = CharArray(lengthLine) { 'a' + (it % charCount) }
+            println(result)
+        }
     }
 
 }
